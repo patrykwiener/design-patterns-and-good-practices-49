@@ -1,46 +1,38 @@
-import timeit
+# pylint: disable=too-few-public-methods, missing-module-docstring, missing-class-docstring, missing-function-docstring
 
-class SAMPLE_PYLINT:
+
+class SamplePylint:
 
     def __init__(self, number):
-        self._NUMBER = number
+        self._number = number
 
-    def Divide(cls, number):
+    @staticmethod
+    def divide(number):
         if number == 0:
             raise ZeroDivisionError()
 
 
-class children(SAMPLE_PYLINT):
+class Children(SamplePylint):
 
-    def __init__(self, name, PARAM, *args, **kwargs):
+    def __init__(self, name, number):
+        super().__init__(number)
         self._name = name
 
-    def some_method(self, param):
-        if param == 1:
-            return  True
-        elif param == 2:
-            return True
-        elif param        ==3:
-            return True
-        elif param ==3:
-            return True
-        elif param ==3:
-            return True
-        else:
-            return False
+    @staticmethod
+    def some_method(param):
+        return param in [1, 2, 3]
 
+    @staticmethod
     def some_method2():
         print('bad implementation')
 
 
 if __name__ == '__main__':
-    sample = SAMPLE_PYLINT(10)
+    sample = SamplePylint(10)
     try:
-        sample.Divide(0)
-    except Exception:
+        sample.divide(0)
+    except ZeroDivisionError:
         pass
-    sample.Divide()
+    sample.divide(number=10)
 
-    obj = children
-    obj.some_method(4)
-
+    Children.some_method(4)
