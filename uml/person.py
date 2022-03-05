@@ -5,7 +5,11 @@ class Person:
         self.phone_number = phone_number
         self.email_address = email_address
         self.__card_number = card_number
-        self.sex = None
 
     def book_hotel(self):
         pass
+
+
+person = Person()
+person.name = 'Jan'
+person.email_address = 'Jan@sda.com'
