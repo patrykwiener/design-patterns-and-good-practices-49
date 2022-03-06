@@ -1,3 +1,6 @@
+from design_patterns.creational import settings
+
+
 class Singleton:
     _INSTANCE = None
 
@@ -20,3 +23,6 @@ if __name__ == '__main__':
     instance_1 = Singleton.get_instance()
     instance_2 = Singleton.get_instance()
     assert instance_1 is instance_2
+
+    settings.DB_PORT
+    settings.DB_HOSTNAME
