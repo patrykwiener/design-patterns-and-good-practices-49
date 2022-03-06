@@ -1,4 +1,11 @@
-class Computer:
+from abc import ABC
+
+
+class Product(ABC):
+    pass
+
+
+class Computer(Product):
 
     def __init__(self):
         self._brand = None
@@ -20,5 +27,15 @@ class Computer:
     def model(self, value):
         self._model = value
 
-    def search_inventory(self):
+
+class Inventory:
+
+    def search(self, product: Product) -> dict:
         pass
+
+
+if __name__ == '__main__':
+    inventory = Inventory()
+    computer = Computer()
+
+    inventory.search(product=computer)
