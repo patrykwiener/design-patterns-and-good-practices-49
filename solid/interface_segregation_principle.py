@@ -7,19 +7,22 @@ class ProductActionsInterface(ABC):
     def show_reviews(self):
         pass
 
+
+class OfflineProductActionsInterface(ProductActionsInterface, ABC):
+
     @abstractmethod
     def find_in_outlet(self):
         pass
+
+
+class OnlineProductActionsInterface(ProductActionsInterface, ABC):
 
     @abstractmethod
     def try_for_seven_days(self):
         pass
 
 
-class ComputerActionsUI(ProductActionsInterface):
-    def try_for_seven_days(self):  # cannot be implemented!
-        pass
-
+class ComputerActionsUI(OfflineProductActionsInterface):
     def find_in_outlet(self):
         pass
 
@@ -27,11 +30,8 @@ class ComputerActionsUI(ProductActionsInterface):
         pass
 
 
-class SoftwareActionsUI(ProductActionsInterface):
+class SoftwareActionsUI(OnlineProductActionsInterface):
     def try_for_seven_days(self):
-        pass
-
-    def find_in_outlet(self):  # cannot be implemented!
         pass
 
     def show_reviews(self):
