@@ -1,8 +1,10 @@
+import json
 from abc import ABC, abstractmethod
 
 
 class Service:
     def service_method(self, data):
+        print(data)
         return 'response'
 
 
@@ -20,7 +22,7 @@ class Adapter(AdapterInterface):
 
     def _convert_to_service_format(self, data):
         # performs conversion
-        return data
+        return json.dumps(data)
 
     def send_converted(self, data):
         # some operations to convert data
@@ -33,5 +35,5 @@ if __name__ == '__main__':
     service = Service()
     adapter = Adapter(service)
 
-    data = {}
+    data = {'test': 'ala ma kota'}
     service_response = adapter.send_converted(data)
