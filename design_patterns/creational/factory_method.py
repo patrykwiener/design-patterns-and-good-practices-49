@@ -47,3 +47,13 @@ if __name__ == '__main__':
 
     boat_factory = BoatFactory()
     boat = boat_factory.make_and_deliver()
+
+    # chcemy uniknac czegos takiego:
+    # truck = Truck(
+    #     address='',
+    #     driver='Patryk',
+    #     delivery_id=1,
+    # )
+    # fuel(truck)
+    # load(truck)
+    # truck.deliver()
